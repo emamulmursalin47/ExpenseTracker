@@ -6,7 +6,7 @@ function Layout() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="container mx-auto px-4 pb-20 pt-16">
+      <main className="container mx-auto px-4 pb-24 pt-16">
         <Outlet />
       </main>
       <BottomNav />

@@ -25,12 +25,13 @@ function CategoryPicker({ type = 'expense', value, onChange }) {
       {categories[type].map((category) => (
         <motion.button
           key={category.id}
+          type="button"
           whileTap={{ scale: 0.95 }}
           onClick={() => onChange(category.id)}
-          className={`flex flex-col items-center p-3 rounded-xl ${
+          className={`flex flex-col items-center p-3 rounded-xl transition-colors ${
             value === category.id
-              ? 'bg-primary-600 text-white'
-              : 'bg-base-200 hover:bg-base-300'
+              ? 'bg-purple-600 text-white'
+              : 'bg-gray-100 hover:bg-gray-200'
           }`}
         >
           <span className="text-2xl mb-1">{category.icon}</span>

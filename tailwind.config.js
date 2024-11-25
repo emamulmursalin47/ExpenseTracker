@@ -19,7 +19,13 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
           950: '#082f49',
+        },
+        purple: {
+          600: '#7C3AED'
         }
+      },
+      padding: {
+        'safe': 'env(safe-area-inset-bottom, 0px)'
       }
     }
   },
