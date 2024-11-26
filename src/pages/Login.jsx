@@ -9,18 +9,13 @@ const Login = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    try {
-      // TODO: Implement login logic here
-      // await loginUser(formData);
-      navigate('/');
-    } catch (error) {
-      console.error('Login failed:', error);
-    } finally {
-      setIsLoading(false);
-    }
+    // TODO: Implement login logic
+    // Store user role in localStorage for demo purposes
+    localStorage.setItem('userRole', formData.role);
+    localStorage.setItem('userName', formData.role === 'husband' ? 'John' : 'Jane');
+    navigate('/');
   };
 
   const handleGoogleLogin = async () => {
@@ -84,7 +79,38 @@ const Login = () => {
                       Password
                     </label>
                   </div>
-                  
+                  <div>
+              <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">
+                I am the
+              </label>
+              <div className="grid grid-cols-2 gap-4">
+                <button
+                  type="button"
+                  className={`p-4 rounded-lg border-2 transition-colors ${
+                    formData.role === 'husband'
+                      ? 'border-purple-600 bg-purple-50'
+                      : 'border-gray-200 hover:border-purple-300'
+                  }`}
+                  onClick={() => setFormData({ ...formData, role: 'husband' })}
+                >
+                  <span className="text-2xl mb-1">👨</span>
+                  <p className="text-sm font-medium">Husband</p>
+                </button>
+                <button
+                  type="button"
+                  className={`p-4 rounded-lg border-2 transition-colors ${
+                    formData.role === 'wife'
+                      ? 'border-purple-600 bg-purple-50'
+                      : 'border-gray-200 hover:border-purple-300'
+                  }`}
+                  onClick={() => setFormData({ ...formData, role: 'wife' })}
+                >
+                  <span className="text-2xl mb-1">👩</span>
+                  <p className="text-sm font-medium">Wife</p>
+                </button>
+              </div>
+            </div>
+          
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <input
