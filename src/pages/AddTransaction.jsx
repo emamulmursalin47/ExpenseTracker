@@ -58,7 +58,7 @@ function AddTransaction() {
               <input
                 type="number"
                 placeholder="0.00"
-                className="input input-bordered input-lg text-center text-2xl pl-10"
+                className="input input-bordered input-lg text-center text-2xl"
                 value={formData.amount}
                 onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
                 required
